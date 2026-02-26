@@ -1,7 +1,8 @@
 const form = document.querySelector('form')
+const tableBody = document.querySelector('tbody')
 
 form.addEventListener('submit', function(event) {
-    event.preventDefault() // stops the page refreshing
+    event.preventDefault()
 
     const booking = {
         room: form[0].value,
@@ -11,7 +12,17 @@ form.addEventListener('submit', function(event) {
         notes: form[4].value
     }
 
-    console.log('Booking submitted:', booking)
+    // Add a new row to the table
+    const row = document.createElement('tr')
+    row.innerHTML = `
+        <td>${booking.room}</td>
+        <td>${booking.date}</td>
+        <td>${booking.startTime}</td>
+        <td>${booking.endTime}</td>
+        <td>${booking.notes}</td>
+    `
+    tableBody.appendChild(row)
+
     alert('Booking submitted! Thank you.')
     form.reset()
 })
