@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyson Building Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script src="script.js"></script>
+
+<body>
+
+    <header>
+        <h1>Dyson Building Booking Tracker</h1>
+        <p>Crowdsourced booking info submitted by Imperial students</p>
+    </header>
+
+    <main>
+        <!-- Booking Table -->
+        <section>
+            <h2>This Week's Bookings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room</th>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Bookings will go here eventually -->
+                    <tr>
+                        <td>Room 1</td>
+                        <td>27/02/2026</td>
+                        <td>10:00</td>
+                        <td>12:00</td>
+                        <td>Looks like a lecture</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Submission Form -->
+        <section>
+            <h2>Submit a Booking</h2>
+            <form>
+                <label>Room</label>
+                <input type="text" placeholder="e.g. Room 1">
+
+                <label>Date</label>
+                <input type="date">
+
+                <label>Start Time</label>
+                <input type="time">
+
+                <label>End Time</label>
+                <input type="time">
+
+                <label>Notes</label>
+                <input type="text" placeholder="e.g. Looks like a lecture">
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
