@@ -23,8 +23,11 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Syne',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none;}
 
-.cursor-dot{width:8px;height:8px;background:white;border-radius:50%;position:fixed;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;}
-.cursor-ring{width:40px;height:40px;border:1px solid rgba(255,255,255,0.35);border-radius:50%;position:fixed;transform:translate(-50%,-50%);pointer-events:none;z-index:9998;transition:width .3s,height .3s,border-color .3s;}
+.cursor-dot{width:4px;height:4px;background:var(--accent2);border-radius:50%;position:fixed;transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:transform .1s;}
+.cursor-ring{width:24px;height:24px;border:none;position:fixed;transform:translate(-50%,-50%);pointer-events:none;z-index:9998;}
+.cursor-ring::before,.cursor-ring::after{content:'';position:absolute;background:rgba(232,168,124,0.7);}
+.cursor-ring::before{width:1px;height:16px;top:50%;left:50%;transform:translate(-50%,-50%);}
+.cursor-ring::after{width:16px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%);}
 
 #progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;z-index:1000;}
 
@@ -64,9 +67,9 @@ nav.scrolled{background:rgba(8,6,10,0.92);backdrop-filter:blur(24px);padding:16p
 .hero-img-outside::after{
   background:linear-gradient(
     to bottom,
-    rgba(8,6,10,0.15) 0%,
-    rgba(8,6,10,0.35) 50%,
-    rgba(8,6,10,0.85) 100%
+    rgba(8,6,10,0.45) 0%,
+    rgba(8,6,10,0.55) 50%,
+    rgba(8,6,10,0.92) 100%
   );
 }
 .hero-img-inside::after{
@@ -95,7 +98,7 @@ nav.scrolled{background:rgba(8,6,10,0.92);backdrop-filter:blur(24px);padding:16p
 .hero-label{
   display:inline-flex;align-items:center;gap:12px;
   font-size:.68rem;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(232,168,124,0.7);margin-bottom:40px;
+  color:rgba(232,168,124,0.95);margin-bottom:40px;
   opacity:0;animation:fadeUp 1s ease .3s forwards;
 }
 .hero-label::before,.hero-label::after{content:'';display:block;width:28px;height:1px;background:rgba(196,98,45,0.5);}
@@ -106,7 +109,7 @@ nav.scrolled{background:rgba(8,6,10,0.92);backdrop-filter:blur(24px);padding:16p
   font-weight:300;line-height:.92;letter-spacing:-3px;
   color:white;margin-bottom:36px;
   opacity:0;animation:fadeUp 1s ease .5s forwards;
-  text-shadow:0 4px 40px rgba(0,0,0,0.5);
+  text-shadow:0 4px 60px rgba(0,0,0,0.9), 0 2px 20px rgba(0,0,0,0.8);
 }
 .hero h1 em{
   font-style:italic;
@@ -127,8 +130,8 @@ nav.scrolled{background:rgba(8,6,10,0.92);backdrop-filter:blur(24px);padding:16p
 
 .btn-primary{padding:14px 36px;background:var(--accent);color:white;border:none;border-radius:100px;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:none;text-decoration:none;transition:all .25s;display:inline-block;}
 .btn-primary:hover{background:var(--accent2);color:#1a0e08;transform:translateY(-3px);box-shadow:0 16px 48px rgba(196,98,45,0.5);}
-.btn-ghost{padding:14px 36px;background:transparent;color:rgba(237,232,224,0.6);border:1px solid rgba(196,98,45,0.3);border-radius:100px;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:none;text-decoration:none;transition:all .25s;display:inline-block;}
-.btn-ghost:hover{border-color:var(--accent2);color:var(--accent2);}
+.btn-ghost{padding:14px 36px;background:#0f0c12;color:rgba(237,232,224,0.85);border:1px solid rgba(196,98,45,0.4);border-radius:100px;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:none;text-decoration:none;transition:all .25s;display:inline-block;}
+.btn-ghost:hover{background:rgba(196,98,45,0.15);border-color:var(--accent2);color:var(--accent2);}
 
 .scroll-hint{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:5;opacity:0;animation:fadeIn 1s ease 1.6s forwards;}
 .scroll-line{width:1px;height:56px;background:linear-gradient(to bottom,transparent,rgba(196,98,45,0.6));animation:scrollPulse 2s ease infinite;}
@@ -242,7 +245,7 @@ footer{padding:40px 48px;display:flex;justify-content:space-between;align-items:
 <div id="progress"></div>
 
 <nav id="nav">
-  <span class="nav-logo">Dyson</span>
+  <span class="nav-logo">Dyson School of Design Engineering</span>
   <div class="nav-links">
     <a href="#rooms">Rooms</a>
     <a href="#calendar">Calendar</a>
